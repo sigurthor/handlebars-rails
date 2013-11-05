@@ -19,7 +19,7 @@ describe "sprockets integration" do
     @context.runtime.eval(source).call(@context.handlebars)
   end
   it 'precompiles templates' do
-    @context.handlebars.templates['foobars']['whole'].call('thing' => 'enchilada').should match 'whole enchilada'
+    @context.handlebars.templates['foobars/whole'].call('thing' => 'enchilada').should match 'whole enchilada'
   end
   it 'precompiles partials' do
     @context.compile('{{>foobars/partial}}').call(:thing => 'enchilada').should match 'partial enchilada'
